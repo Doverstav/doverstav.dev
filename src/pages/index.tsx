@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div>Humble beginnings</div>
+        <Link href={"/projects"}>Projects</Link>
       </main>
     </>
   );
