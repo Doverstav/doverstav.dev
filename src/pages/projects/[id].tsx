@@ -20,7 +20,7 @@ export default function ProjectPage({ projectData }: ProjectPageProps) {
       <article>
         <div>
           {projectData.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
+            <p key={tag}>{tag}</p>
           ))}
         </div>
         <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />

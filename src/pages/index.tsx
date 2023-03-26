@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Layout>
       <main className={styles.main}>
-        <div>Humble beginnings</div>
+        <h1>Humble beginnings</h1>
         <Link href={"/projects"}>Projects</Link>
       </main>
     </Layout>

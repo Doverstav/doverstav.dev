@@ -9,14 +9,14 @@ interface ProjectsProps {
 export default function Projects({ allProjectsData }: ProjectsProps) {
   return (
     <Layout>
-      Projects {allProjectsData.length}:
+      <h1>Currently {allProjectsData.length} projects:</h1>
       <div>
         {allProjectsData.map((projectFrontmatter) => (
           <>
             <Link href={`/projects/${projectFrontmatter.id}`}>
               {projectFrontmatter.title}
             </Link>
-            <div>{projectFrontmatter.tags}</div>
+            <p>{projectFrontmatter.tags}</p>
           </>
         ))}
       </div>
