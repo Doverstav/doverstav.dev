@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
-import Layout from "../../../components/layout";
+import Layout from "../../../components/Layout";
 import { getProjectsData, ProjectData } from "../../../utils/projects";
 
 interface ProjectsProps {

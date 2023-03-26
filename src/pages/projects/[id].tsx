@@ -1,6 +1,6 @@
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
-import Layout from "../../../components/layout";
+import Layout from "../../../components/Layout";
 import {
   getAllProjectsIds,
   getProjectData,
