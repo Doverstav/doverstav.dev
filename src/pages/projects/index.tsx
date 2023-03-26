@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
+import FilterButton from "../../../components/FilterButton";
 import Layout from "../../../components/Layout";
 import { getProjectsData, ProjectData } from "../../../utils/projects";
 
@@ -43,10 +44,14 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
       <h2>Filter</h2>
       <div>
         {allTags.map((tag) => (
-          <button key={tag} onClick={() => handleFilterButtonClick(tag)}>
-            {tag}
-          </button>
+          <FilterButton
+            key={tag}
+            text={tag}
+            clickHandler={() => handleFilterButtonClick(tag)}
+            active={selectedTags.includes(tag)}
+          />
         ))}
+        <button onClick={() => setSelectedTags([])}>Clear filter</button>
       </div>
       <hr />
       <div>
