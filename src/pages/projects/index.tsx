@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Layout from "../../../components/layout";
 import { getProjectsData, ProjectData } from "../../../utils/projects";
 
 interface ProjectsProps {
@@ -7,7 +8,7 @@ interface ProjectsProps {
 
 export default function Projects({ allProjectsData }: ProjectsProps) {
   return (
-    <div>
+    <Layout>
       Projects {allProjectsData.length}:
       <div>
         {allProjectsData.map((projectFrontmatter) => (
@@ -19,7 +20,7 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
           </>
         ))}
       </div>
-    </div>
+    </Layout>
   );
 }
 

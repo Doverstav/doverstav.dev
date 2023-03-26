@@ -1,5 +1,6 @@
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Head from "next/head";
+import Layout from "../../../components/layout";
 import {
   getAllProjectsIds,
   getProjectData,
@@ -12,7 +13,7 @@ interface ProjectPageProps {
 
 export default function ProjectPage({ projectData }: ProjectPageProps) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>{projectData.title}</title>
       </Head>
@@ -24,7 +25,7 @@ export default function ProjectPage({ projectData }: ProjectPageProps) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
       </article>
-    </>
+    </Layout>
   );
 }
 
