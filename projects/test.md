@@ -1,5 +1,6 @@
 ---
 title: Test project 1
+excerpt: This is a nice little excerpt, defined in frontmatter. It can also be defined in the "main" markdown, but do I want that?
 tags:
   - kitscon
   - highlight

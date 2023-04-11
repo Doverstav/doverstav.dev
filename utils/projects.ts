@@ -8,6 +8,7 @@ const projectsDirectory = path.join(process.cwd(), "projects");
 
 export interface ProjectFrontmatterData {
   title: string;
+  excerpt: string;
   tags: string[];
 }
 

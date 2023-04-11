@@ -65,13 +65,14 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
       <hr />
       <div>
         {filteredProjects.map((projectFrontmatter) => (
-          <div key={projectFrontmatter.id}>
+          <div className={styles.projectContainer} key={projectFrontmatter.id}>
             <Link href={`/projects/${projectFrontmatter.id}`}>
               {projectFrontmatter.title}
             </Link>
             {projectFrontmatter.tags.map((tag) => (
               <TagPill key={tag} tagText={tag} />
             ))}
+            <p>{projectFrontmatter.excerpt}</p>
           </div>
         ))}
       </div>
