@@ -1,3 +1,4 @@
+import { stringToColor } from "../../utils/colors";
 import styles from "./filterButton.module.css";
 
 interface FilterButtonProps {
@@ -11,9 +12,16 @@ export default function FilterButton({
   clickHandler,
   active,
 }: FilterButtonProps) {
+  const [activeMainColor, activeBorderColor] = stringToColor(text);
+  const activeStyle = {
+    backgroundColor: activeMainColor,
+    border: `2px solid ${activeBorderColor}`,
+  };
+
   return (
     <button
-      className={active ? styles.active : undefined}
+      className={styles.button}
+      style={active ? activeStyle : {}}
       onClick={clickHandler}
     >
       {text}

@@ -1,5 +1,5 @@
 .container {
-  background-color: #f6f6f6;
+  background-color: var(--container-bg-color);
 
   max-width: 36rem;
   min-height: 100vh;
