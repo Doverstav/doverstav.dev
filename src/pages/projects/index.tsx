@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import FilterButton from "../../../components/FilterButton";
 import Layout from "../../../components/Layout";
 import { getProjectsData, ProjectData } from "../../../utils/projects";
+import { TagPill } from "../../../components/TagPill";
 
 interface ProjectsProps {
   allProjectsData: ProjectData[];
@@ -43,25 +44,31 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
       <h1>Currently {allProjectsData.length} projects:</h1>
       <h2>Filter</h2>
       <div>
-        {allTags.map((tag) => (
-          <FilterButton
-            key={tag}
-            text={tag}
-            clickHandler={() => handleFilterButtonClick(tag)}
-            active={selectedTags.includes(tag)}
-          />
-        ))}
-        <button onClick={() => setSelectedTags([])}>Clear filter</button>
+        <div>
+          {allTags.map((tag) => (
+            <FilterButton
+              key={tag}
+              text={tag}
+              clickHandler={() => handleFilterButtonClick(tag)}
+              active={selectedTags.includes(tag)}
+            />
+          ))}
+        </div>
+        <div>
+          <button onClick={() => setSelectedTags([])}>Clear filter</button>
+        </div>
       </div>
       <hr />
       <div>
         {filteredProjects.map((projectFrontmatter) => (
-          <>
+          <div key={projectFrontmatter.id}>
             <Link href={`/projects/${projectFrontmatter.id}`}>
               {projectFrontmatter.title}
             </Link>
-            <p>{projectFrontmatter.tags}</p>
-          </>
+            {projectFrontmatter.tags.map((tag) => (
+              <TagPill key={tag} tagText={tag} />
+            ))}
+          </div>
         ))}
       </div>
     </Layout>

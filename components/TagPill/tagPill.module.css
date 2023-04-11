@@ -1,0 +1,7 @@
+.container {
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0.25rem;
+  border-radius: 50px;
+
+  font-size: 0.8rem;
+}

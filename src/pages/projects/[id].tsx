@@ -6,6 +6,7 @@ import {
   getProjectData,
   ProjectDataWithContent,
 } from "../../../utils/projects";
+import { TagPill } from "../../../components/TagPill";
 
 interface ProjectPageProps {
   projectData: ProjectDataWithContent;
@@ -20,7 +21,7 @@ export default function ProjectPage({ projectData }: ProjectPageProps) {
       <article>
         <div>
           {projectData.tags.map((tag) => (
-            <p key={tag}>{tag}</p>
+            <TagPill key={tag} tagText={tag} />
           ))}
         </div>
         <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
