@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import FilterButton from "../../../components/FilterButton";
 import Layout from "../../../components/Layout";
 import { getProjectsData, ProjectData } from "../../../utils/projects";
 import { TagPill } from "../../../components/TagPill";
+import styles from "./projects.module.css";
 
 interface ProjectsProps {
   allProjectsData: ProjectData[];
@@ -41,6 +42,9 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
 
   return (
     <Layout>
+      <div className={styles.backLink}>
+        <Link href={"/"}>{"<- Return to main"}</Link>
+      </div>
       <h1>Currently {allProjectsData.length} projects:</h1>
       <h2>Filter</h2>
       <div>
