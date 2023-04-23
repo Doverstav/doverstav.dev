@@ -76,6 +76,7 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
               .map((tag) => (
                 <TagPill key={tag} tagText={tag} />
               ))}
+            <p>{projectFrontmatter.excerpt}</p>
             <div className={styles.externalLinkContainer}>
               {projectFrontmatter.github && (
                 <Link
@@ -99,7 +100,6 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
                 </Link>
               )}
             </div>
-            <p>{projectFrontmatter.excerpt}</p>
           </div>
         ))}
       </div>
