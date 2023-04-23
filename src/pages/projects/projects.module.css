@@ -5,3 +5,22 @@
 .projectContainer {
   margin: 1rem 0;
 }
+
+.externalLinkContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.externalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  margin-top: 1rem;
+}
+
+.externalLinkImage {
+  width: 1.5rem;
+  height: 1.5rem;
+}

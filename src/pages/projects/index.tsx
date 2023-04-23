@@ -5,6 +5,8 @@ import Layout from "../../../components/Layout";
 import { getProjectsData, ProjectData } from "../../../utils/projects";
 import { TagPill } from "../../../components/TagPill";
 import styles from "./projects.module.css";
+import Image from "next/image";
+import githubLogo from "../../../assets/github-mark.png";
 
 interface ProjectsProps {
   allProjectsData: ProjectData[];
@@ -69,9 +71,34 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
             <Link href={`/projects/${projectFrontmatter.id}`}>
               {projectFrontmatter.title}
             </Link>
-            {projectFrontmatter.tags.map((tag) => (
-              <TagPill key={tag} tagText={tag} />
-            ))}
+            {projectFrontmatter.tags
+              .sort((a, b) => a.localeCompare(b))
+              .map((tag) => (
+                <TagPill key={tag} tagText={tag} />
+              ))}
+            <div className={styles.externalLinkContainer}>
+              {projectFrontmatter.github && (
+                <Link
+                  className={styles.externalLink}
+                  href={projectFrontmatter.github}
+                >
+                  <Image
+                    src={githubLogo}
+                    alt="Logo for Github"
+                    className={styles.externalLinkImage}
+                  />
+                  Github
+                </Link>
+              )}
+              {projectFrontmatter.website && (
+                <Link
+                  className={styles.externalLink}
+                  href={projectFrontmatter.website}
+                >
+                  Website
+                </Link>
+              )}
+            </div>
             <p>{projectFrontmatter.excerpt}</p>
           </div>
         ))}

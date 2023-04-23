@@ -10,6 +10,8 @@ export interface ProjectFrontmatterData {
   title: string;
   excerpt: string;
   tags: string[];
+  github?: string;
+  website?: string;
 }
 
 export interface ProjectData extends ProjectFrontmatterData {

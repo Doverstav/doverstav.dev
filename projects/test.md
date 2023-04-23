@@ -4,6 +4,8 @@ excerpt: This is a nice little excerpt, defined in frontmatter. It can also be d
 tags:
   - kitscon
   - highlight
+github: https://github.com/Doverstav/gibd
+website: https://www.npmjs.com/package/gray-matter
 ---
 
 # Some title
