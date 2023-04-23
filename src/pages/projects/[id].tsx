@@ -55,6 +55,7 @@ export default function ProjectPage({
                 const { width, height } = imageSizes[props.src];
                 return (
                   <Image
+                    className={styles.projectImage}
                     src={src}
                     alt={alt ?? ""}
                     width={width}
@@ -62,7 +63,7 @@ export default function ProjectPage({
                   />
                 );
               } else {
-                return <img {...props} />;
+                return <img className={styles.projectImage} {...props} />;
               }
             },
           }}

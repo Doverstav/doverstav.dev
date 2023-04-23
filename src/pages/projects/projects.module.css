@@ -14,3 +14,13 @@
 .externalLinksWrapper {
   margin-top: 1rem;
 }
+
+.projectImage {
+  /* Ensure image at most takes full width, and keeps aspect ratio */
+  max-width: 100%;
+  height: auto;
+
+  /* Centers image */
+  display: block;
+  margin: 0 auto;
+}
