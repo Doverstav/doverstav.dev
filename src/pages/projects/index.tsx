@@ -6,7 +6,7 @@ import { getProjectsData, ProjectData } from "../../../utils/projects";
 import { TagPill } from "../../../components/TagPill";
 import styles from "./projects.module.css";
 import Image from "next/image";
-import githubLogo from "../../../assets/github-mark.png";
+import githubLogo from "../../../public/assets/github-mark.png";
 
 interface ProjectsProps {
   allProjectsData: ProjectData[];

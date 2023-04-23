@@ -25,6 +25,8 @@ It is supported!
 
 ---
 
+![image here](/assets/github-mark.png)
+
 [link here](http://localhost:3000)
 [external link](https://www.google.com)
 
