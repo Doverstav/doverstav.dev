@@ -13,6 +13,7 @@ import ReactMarkdown from "react-markdown";
 import sizeOf from "image-size";
 import { join } from "path";
 import Image from "next/image";
+import { ExternalLinks } from "../../../components/ExternalLinks";
 
 interface ProjectPageProps {
   projectData: ProjectDataWithContent;
@@ -36,6 +37,12 @@ export default function ProjectPage({
           {projectData.tags.map((tag) => (
             <TagPill key={tag} tagText={tag} />
           ))}
+        </div>
+        <div className={styles.externalLinksWrapper}>
+          <ExternalLinks
+            github={projectData.github}
+            website={projectData.website}
+          />
         </div>
         <ReactMarkdown
           components={{
