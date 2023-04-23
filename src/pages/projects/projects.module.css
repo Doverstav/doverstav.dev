@@ -2,8 +2,13 @@
   margin-bottom: 1rem;
 }
 
+.projectContainer:nth-child(even) {
+  background-color: var(--main-bg-color);
+}
+
 .projectContainer {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
 }
 
 .externalLinkContainer {
@@ -16,8 +21,6 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-
-  margin-top: 1rem;
 }
 
 .externalLinkImage {
