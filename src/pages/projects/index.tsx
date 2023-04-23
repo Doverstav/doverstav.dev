@@ -7,6 +7,7 @@ import { TagPill } from "../../../components/TagPill";
 import styles from "./projects.module.css";
 import Image from "next/image";
 import githubLogo from "../../../public/assets/github-mark.png";
+import { ExternalLinks } from "../../../components/ExternalLinks";
 
 interface ProjectsProps {
   allProjectsData: ProjectData[];
@@ -77,29 +78,10 @@ export default function Projects({ allProjectsData }: ProjectsProps) {
                 <TagPill key={tag} tagText={tag} />
               ))}
             <p>{projectFrontmatter.excerpt}</p>
-            <div className={styles.externalLinkContainer}>
-              {projectFrontmatter.github && (
-                <Link
-                  className={styles.externalLink}
-                  href={projectFrontmatter.github}
-                >
-                  <Image
-                    src={githubLogo}
-                    alt="Logo for Github"
-                    className={styles.externalLinkImage}
-                  />
-                  Github
-                </Link>
-              )}
-              {projectFrontmatter.website && (
-                <Link
-                  className={styles.externalLink}
-                  href={projectFrontmatter.website}
-                >
-                  Website
-                </Link>
-              )}
-            </div>
+            <ExternalLinks
+              github={projectFrontmatter.github}
+              website={projectFrontmatter.website}
+            />
           </div>
         ))}
       </div>

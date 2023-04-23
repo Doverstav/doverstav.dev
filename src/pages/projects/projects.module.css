@@ -10,20 +10,3 @@
   margin: 0.5rem 0;
   padding: 0.5rem;
 }
-
-.externalLinkContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.externalLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.externalLinkImage {
-  width: 1.5rem;
-  height: 1.5rem;
-}
