@@ -25,7 +25,8 @@ It is supported!
 
 ---
 
-[link here](https://localhost:3000)
+[link here](http://localhost:3000)
+[external link](https://www.google.com)
 
 This is a short description, perhaps I'll have a link here as well.
 

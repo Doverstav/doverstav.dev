@@ -1,8 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { remark } from "remark";
-import remarkHtml from "remark-html";
 
 const projectsDirectory = path.join(process.cwd(), "projects");
 
@@ -19,7 +17,7 @@ export interface ProjectData extends ProjectFrontmatterData {
 }
 
 export interface ProjectDataWithContent extends ProjectData {
-  contentHtml: string;
+  content: string;
 }
 
 export function getProjectsData() {
@@ -51,14 +49,9 @@ export async function getProjectData(id: string) {
 
   const frontMatter = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(remarkHtml)
-    .process(frontMatter.content);
-  const contentHtml = processedContent.toString();
-
   return {
     id,
-    contentHtml,
+    content: frontMatter.content,
     ...frontMatter.data,
   } as ProjectDataWithContent;
 }

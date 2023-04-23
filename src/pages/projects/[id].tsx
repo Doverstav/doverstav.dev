@@ -9,6 +9,7 @@ import {
 import { TagPill } from "../../../components/TagPill";
 import Link from "next/link";
 import styles from "./projects.module.css";
+import ReactMarkdown from "react-markdown";
 
 interface ProjectPageProps {
   projectData: ProjectDataWithContent;
@@ -29,7 +30,15 @@ export default function ProjectPage({ projectData }: ProjectPageProps) {
             <TagPill key={tag} tagText={tag} />
           ))}
         </div>
-        <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
+        <ReactMarkdown
+          components={{
+            link: ({ href, children }) => (
+              <Link href={href ?? ""}>{children}</Link>
+            ),
+          }}
+        >
+          {projectData.content}
+        </ReactMarkdown>
         <div className={styles.backLink}>
           <Link href={"/projects"}>{"<- Return to projects"}</Link>
         </div>
