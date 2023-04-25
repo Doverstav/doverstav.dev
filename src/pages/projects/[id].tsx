@@ -63,6 +63,7 @@ export default function ProjectPage({
                   />
                 );
               } else {
+                // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
                 return <img className={styles.projectImage} {...props} />;
               }
             },
